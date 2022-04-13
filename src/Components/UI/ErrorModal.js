@@ -6,7 +6,8 @@ import classes from "./ErrorModal.module.css"
 function ErrorModal(props) {
     const [error,setError]=useState(false);
     const toggle=()=>{
-        setError(!error)
+        console.log(error)
+        // setError(false)
         console.log(`${error} from error modal`)
         props.handleError(error)
 
@@ -15,7 +16,7 @@ function ErrorModal(props) {
 
   return (
       <div>
-          <div className={classes.backdrop} />
+          <div className={classes.backdrop} onClick={toggle}/>
     <Card className={classes.modal}>
         <div>
         <header className={classes.header}>
